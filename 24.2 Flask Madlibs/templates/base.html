@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/app.css" />
+    <title>{% block title %}MAD.LIBS.{% endblock %}</title>
+  </head>
+  <body>
+    <main id="content">
+    {% block content %} 
+    <h1>Welcome to Madlibs!</h1>
+    <h3>Fill out the form below:</h3>
+    <form action="/madlib">
+      <p>
+        <label for="place">Place:</label>
+        <input type="text" placeholder="place" name="place" id="place">
+      </p>
+      <p>
+      <label for="noun">Noun:</label>
+      <input type="text" placeholder="noun" name="noun" id="noun">
+      </p>
+      <p>
+      <label for="verb">Verb:</label>
+      <input type="text" placeholder="verb" name="verb" id="verb">
+      </p>
+      <p>
+      <label for="adjective">Adjective:</label>
+      <input type="text" placeholder="adjective" name="adjective" id="adjective">
+      </p>
+      <p>
+      <label for="plural_noun">Plural Noun:</label>
+      <input type="text" placeholder="plural noun" name="plural_noun" id="plural_noun">
+      </p>
+      <button>Submit!</button>
+    </form>
+    {% endblock %}
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

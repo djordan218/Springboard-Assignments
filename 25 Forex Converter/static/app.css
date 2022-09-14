@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: auto;
+}
+
+h1 {
+    color: purple;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h5 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.content {
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+input {
+    text-align: center;
+}
+
+.flash {
+    text-align: center;
+}
+
+.flash .error {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 2px;
+    font-size: 15px;
+}
+
+.flash .success {
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 2px;
+    font-size: 15px;
+}

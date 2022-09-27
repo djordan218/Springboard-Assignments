@@ -1,0 +1,19 @@
+#content {
+  padding: 20px;
+  text-align: center;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+  margin-left: -1em;
+}

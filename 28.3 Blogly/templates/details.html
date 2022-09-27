@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/app.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <title>{{user.first_name}} {{user.last_name}}</title>
+  </head>
+  <body>
+    <div class="row">
+      {% if user.image_url %}
+      <div>
+        <img
+          src="{{ user.image_url }}"
+          alt="{{ user.first_name }} {{user.last_name}}"
+          class="img-fluid"
+        />
+      </div>
+      {% endif %}
+    </div>
+    <h1>{{user.first_name}}'s Details</h1>
+    <ul>
+      <li>ID: {{user.id}}</li>
+      <li>Name: {{user.first_name}} {{user.last_name}}</li>
+    </ul>
+
+    <form action="/users/{{ user.id }}/edit">
+      <input type="text" name="first_name" placeholder="Enter a first name" />
+      <input type="text" name="last_name" placeholder="Enter a last name" />
+      <input
+        type="text"
+        name="image_url"
+        placeholder="Provide an image of this user"
+      />
+      <button>Edit</button>
+    </form>
+    <button formaction="/users/{{ user.id }}/delete" , formmethod="POST">
+      Delete User
+    </button>
+
+    <a href="/">Go Back</a>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

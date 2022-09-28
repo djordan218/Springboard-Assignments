@@ -1,0 +1,13 @@
+.Cupcake-img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  margin-left: -1em;
+}

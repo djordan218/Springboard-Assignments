@@ -1,0 +1,52 @@
+Data Validation with Schemas 
+
+Server-side Data Validation 
+- a server lacking adequate validation can result in:
+    - corrupt or incomplete data (can cause errors later)
+    - crashing or locking up the server 
+    - displaying unehlpful errors to the frontend/API users 
+
+Why JSON Schema?
+- three main reasons for using a schema validation system:
+    1. So user data can fail fast, before bad data gets to your db 
+    2. To reduce amount of code for processing and validating data 
+    3. To get a validation system that is easy to setup and maintain 
+
+What if we want to verify the format of a field? Number? Password? URL? Etc.
+- what if we need to check that a URL is valid and working?
+- how do we validate this without having a butt ton of code?
+
+JSONSchema!
+- standard specification for describing JSON in a human and machine readable format 
+- a vocabulary that allows you to annotate and validate JSON documents 
+www.json-schema.org 
+
+Schema:
+{
+    "type": "object",
+    "properties": {
+        "street_address": { "type": "string" },
+        "city":           { "type": "string" },
+        "state":          { "type": "string" },
+        "zip":            { "type": "number" }
+    },
+    "required": ["street_address", "city", "state", "zip"]
+}
+
+Input JSON that is correct:
+{
+	"street_address": "8437 S Toledo Ave",
+    "city": "Tulsa",
+    "state": "OK",
+    "zip": 74137
+}
+
+npm install jsonschema
+
+Things to be aware of:
+- validation can be quite strict, so take care when setting up a schema 
+- as you add new fields/columns, make sure you update schema
+- you may want different schemas for updating/creating 
+
+- you can create extrememly robust validation systems with JSONSchema 
+- you can create customized error messages if you want, but gotta learn it 

@@ -1,0 +1,39 @@
+React Events 
+- DOM vs. React
+- React events are camelCase, rather than lowercase 
+- with JSX you pass a function as event handler instead of a string
+
+Typical JS/HTML event handler 
+<button onclick="function()"></button>
+
+React event handler 
+<button onClick={function}></button>
+
+Event Attributes 
+- Any event you can listen for in JS, you can listen for in React 
+    - mouse events, form events, etc.
+
+React State 
+- data specific to a component 
+- can change!
+
+What common things belong in state?
+- hiding or showing some data (toggling)
+- fetching data from an API (starts empty and changes to be populated)
+- themes, colors, or styles that change based on an event
+- when working with some information, ask yourself - will this ever change?
+    - if so, you're gonna need React state 
+
+State 
+- in React, state is created using useState 
+- useState returns an array with two values 
+    - what the piece of state is 
+    - a function to change it
+- import useState from React 
+- useState takes one argument, whatever you'd like the initial state to be
+- you must call useState in the component 
+- you cannot call useState in loops or conditionals 
+
+Props vs State 
+- a common question: what belongs in state and what belongs in props?
+    - if the data will ever change, it needs to be in state!

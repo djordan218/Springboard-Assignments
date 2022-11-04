@@ -1,0 +1,19 @@
+li {
+  list-style: none;
+  transform: translateX(-20px);
+}
+
+.Pokecard {
+  flex: 0 0 20%;
+  background-color: rgb(187, 187, 187);
+  width: 100px;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  outline: 2px solid black;
+}
+
+.Pokecard-name {
+  color: blue;
+  font-weight: bold;
+}

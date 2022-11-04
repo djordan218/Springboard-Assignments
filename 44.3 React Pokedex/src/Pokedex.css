@@ -1,0 +1,11 @@
+.Pokedex-card {
+  display: flex;
+  row-gap: 50px;
+  column-gap: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.Pokedex-header {
+  text-align: center;
+}

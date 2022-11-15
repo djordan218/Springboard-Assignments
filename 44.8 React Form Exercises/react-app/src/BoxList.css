@@ -1,0 +1,10 @@
+.BoxList {
+  display: flex;
+}
+
+.BoxListBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

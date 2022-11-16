@@ -1,0 +1,52 @@
+useEffect and useref hooks in React 
+
+Hooks 
+- new add to React 
+- let you use state and other React features without writing a class 
+- start with "use" 
+- useState is a hook 
+
+useEffect 
+- built in hook for "side effects" 
+- fetching data, starting a timer, and manually changing the DOM are all side effects 
+- accepts two arguments (function, when it should run)
+- useEffect will run after the first render 
+    - also runs after all rerenders by default (can change this)
+    - accepts a callback function as its first argument 
+    - returns an undefined or a function 
+        - if you return a function, it will run before the component unmounts or before the effect runs again 
+
+useEffect Arguments 
+- second argument to useEffect 
+- you can tell React to skip applying an effect if certain values haven't changed between re-renders 
+- useEffect accepts an array as its second argument where you place these values (also called dependencies)
+- if you want to run effect and clean it up only once, you can pass an empty array as a second argument 
+- this tells React taht your effect doesn't depend on any values from props or state
+
+Fetching Data on Initial Render 
+
+Typical Use Case for useEffect
+- it's very common that when a component renders, you'll want to fetch some data from an external data source or API 
+- we want to do this after the component first renders so that we can show the user something (ex a loading screen) while we fetch that data
+- to fetch correctly, we'll run an effect that only happens once and when the API call is finished, we'll set our state and render the component again
+    - useEffect cannot be an async function itself, we must define an async function inside and invoke it
+
+Cleaning Up an Effect 
+- in the previous example, we only fetched data on mount and on update, but it's very common to handle events when the component will be removed from the DOM.
+    - clearing intervals or timeouts
+    - removing an event listener
+    - unsubscribing 
+    - disconnecting from a socket 
+
+
+useRef 
+- hook we can use to define a mutalble object that has a key of current whose value is eual to the initial value passed into the hook 
+- common applications of useRef 
+    - accessing an underlying DOM element (set up a reference where we "point" to that DOM element)
+    - setting up/clearing timers 
+
+Antipattern for useRef 
+- what you should NOT do when using useRef 
+- since refs can expose DOM elements for us, it can be tempting to use them to access the DOM and make changes (toggle classes, set text, etc)
+- avoid using references unless you can't get around it 
+- React should control the state of the DOM 

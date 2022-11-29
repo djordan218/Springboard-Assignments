@@ -1,0 +1,13 @@
+.SearchForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchField {
+  width: 100%;
+}
+
+.center-block {
+  margin: 0 auto;
+  display: block;
+}
